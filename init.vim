@@ -63,7 +63,7 @@ set clipboard=unnamed
 set nocompatible              " be iMproved, required
 
 " set the runtime path to include Vundle and initialize
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 " On-demand loading
 Plug 'vim-scripts/L9'
 Plug 'vim-airline/vim-airline'
@@ -87,7 +87,6 @@ Plug 'uguu-org/vim-matrix-screensaver'
 Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'liuchengxu/space-vim-dark'
-"Plugin 'tarekbecker/vim-yaml-formatter'
 Plug 'ianva/vim-youdao-translater'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -148,13 +147,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-function SourceSession()
-    execute ':NERDTreeClose'
-    execute ':so Session.vim'
-endfunction
-
-command So :call SourceSession()
-
 command Fold set foldnestmax=1
 command Nofold set foldnestmax=0
 set maxmempattern=1048576
@@ -166,7 +158,6 @@ nmap <F8> :TagbarToggle<CR>
  "打开终端
 nnoremap ff :FufFile<CR> 
 nnoremap fb :FufBuffer<CR> 
-nnoremap jl :FufJumpList<CR>
 nnoremap ft :FufTag<CR>
 nnoremap tb :TagbarToggle<CR>
 nnoremap nt :NERDTreeToggle<CR>
