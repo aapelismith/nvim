@@ -65,17 +65,12 @@ set nocompatible              " be iMproved, required
 " set the runtime path to include Vundle and initialize
 call plug#begin('~/.vim/plugged')
 " On-demand loading
-Plug 'vim-scripts/L9'
+Plug 'vim-scripts/L9'   " vim 基础库
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
-Plug 'w0rp/ale'
 Plug 'Valloric/YouCompleteMe'
-Plug 'jnurmine/Zenburn'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'kien/ctrlp.vim'
-Plug 'Chiel92/vim-autoformat'
-Plug 'tell-k/vim-autopep8'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Yggdroot/indentLine'
@@ -83,24 +78,19 @@ Plug 'fatih/vim-go'
 Plug 'vim-scripts/darktango.vim'
 Plug 'majutsushi/tagbar'
 Plug 'yonchu/accelerated-smooth-scroll'
-Plug 'uguu-org/vim-matrix-screensaver'
 Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'liuchengxu/space-vim-dark'
-Plug 'ianva/vim-youdao-translater'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'vim-scripts/FuzzyFinder'
-Plug 'vim-scripts/dbext.vim'
-Plug 'vim-scripts/sqlutilities'
-Plug 'tpope/vim-obsession'
 call plug#end()
 
 filetype plugin indent on    " required
 
 "YouCompleteMe 配置
-let g:ycm_global_ycm_extra_conf='~/.config/nvim/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_python_binary_path = 'python3'
 let g:go_fmt_command = "goimports"
@@ -150,11 +140,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 command Fold set foldnestmax=1
 command Nofold set foldnestmax=0
 set maxmempattern=1048576
-"按键绑定
-"F3开启和关闭树
-map <F3> :NERDTreeToggle<CR>
-map <F4> :call OpenTerminal()<CR>
-nmap <F8> :TagbarToggle<CR>  
+
  "打开终端
 nnoremap ff :FufFile<CR> 
 nnoremap fb :FufBuffer<CR> 
@@ -162,7 +148,6 @@ nnoremap ft :FufTag<CR>
 nnoremap tb :TagbarToggle<CR>
 nnoremap nt :NERDTreeToggle<CR>
 nnoremap te :call OpenTerminal()<CR>
-nnoremap tr :Ydc <CR>
 
 function LocationListNavOrJustOne(cmd)
     redir => output
